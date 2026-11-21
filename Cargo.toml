@@ -1,0 +1,14 @@
+[package]
+name = "testhermes"
+version = "0.3.4"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.35", features = ["glow"] }
+rfd = "0.17"
+
+[profile.release]
+opt-level = "z"  # Optimize for size
+lto = true     # Enable link-time optimization
+codegen-units = 1
+panic = "abort"

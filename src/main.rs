@@ -2,8 +2,21 @@
 use eframe::egui;
 use rfd::FileDialog;
 use std::fs;
+use std::panic;
 
-fn main() -> eframe::Result<()> {
+fn main() {
+    // Set a panic hook to write errors to a file instead of just crashing
+    panic::set_hook(Box::new(|info| {
+        let msg = format!("Panic occurred: \n{:?}", info);
+        let _ = fs::write("crash.log", msg);
+    }));
+
+    if let Err(e) = start_app() {
+        let _ = fs::write("crash.log", format!("App Error: {}", e));
+    }
+}
+
+fn start_app() -> eframe::Result<()> {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default().with_inner_size([600.0, 400.0]),
         ..Default::default()

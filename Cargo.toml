@@ -1,8 +1,8 @@
 [package]
 name = "file_reader_gui"
-version = "0.2.1"
+version = "0.2.4"
 edition = "2021"
 
 [dependencies]
-eframe = { version = "0.28", default-features = false, features = ["glow"] }
+eframe = { version = "0.28", default-features = false, features = ["glow", "wayland-client"] }
 rfd = "0.14"

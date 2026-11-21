@@ -1,8 +1,8 @@
 [package]
 name = "file_reader_gui"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 
 [dependencies]
-eframe = "0.28"
+eframe = { version = "0.28", default-features = false, features = ["glow"] }
 rfd = "0.14"

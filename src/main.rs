@@ -12,7 +12,7 @@ fn main() -> eframe::Result<()> {
     eframe::run_native(
         "Rust Text Reader",
         options,
-        Box::new(|_cc| Box::new(FileReaderApp::default())),
+        Box::new(|_cc| Ok(Box::new(FileReaderApp::default()))),
     )
 }
 

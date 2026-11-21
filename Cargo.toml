@@ -1,6 +1,8 @@
 [package]
-name = "file_reader"
-version = "0.1.0"
+name = "file_reader_gui"
+version = "0.2.0"
 edition = "2021"
 
 [dependencies]
+eframe = "0.28"
+rfd = "0.14"
